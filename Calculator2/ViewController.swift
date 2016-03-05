@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     @IBAction func backspace(sender: UIButton) {
         if display.text!.characters.count > 1 {
         
-            display.text! = display.text!.substringToIndex(countElements(display.text!) - 1)
+           // display.text! = display.text!.substringToIndex(countElements(display.text!) - 1)
         }else{
             display.text = "0"
         }
