@@ -143,14 +143,6 @@
                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AyL-sG-fUw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9n1-Lk-LRb">
-                                <rect key="frame" x="100" y="189" width="64" height="64"/>
-                                <state key="normal" title="∏"/>
-                                <connections>
-                                    <action selector="enter" destination="BYZ-38-t0r" eventType="touchUpInside" id="LQF-wr-c7m"/>
-                                    <action selector="pi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1U4-JU-3N1"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIc-Xv-1hi">
                                 <rect key="frame" x="20" y="69" width="64" height="64"/>
                                 <state key="normal" title="7"/>
@@ -193,21 +185,24 @@
                                     <action selector="pushMemory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lHe-fh-3uK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWJ-cM-ySF">
+                                <rect key="frame" x="100" y="189" width="64" height="64"/>
+                                <state key="normal" title="∏"/>
+                                <connections>
+                                    <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Knn-Gj-IRG"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCl-LZ-4Np">
-                                <rect key="frame" x="100" y="229" width="64" height="64"/>
+                                <rect key="frame" x="140" y="229" width="64" height="64"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="&lt;-">
+                                <state key="normal">
+                                    <string key="title">←
+LEFTWARDS ARROW
+Unicode: U+2190, UTF-8: E2 86 90</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="Backspace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TEN-OY-gnE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rM-vq-eHc">
-                                <rect key="frame" x="140" y="229" width="64" height="64"/>
-                                <state key="normal" title="∏"/>
-                                <connections>
-                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Vy-9D-EJE"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -31,12 +31,6 @@ class ViewController: UIViewController {
         updateHistory()
     }
     
-    @IBAction func pi(sender: UIButton) {
-        userInputing = true
-        display.text = "∏"
-        displayValue = x
-        updateHistory()
-    }
     
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle! //! unwraps or crashes if optional is nil

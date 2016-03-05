@@ -57,6 +57,7 @@ class CalculatorBrain
         func learnOp(op: Op){
             knownOps[op.description] = op
         }
+        learnOp(Op.Constant("∏", M_PI))
         learnOp(Op.BinaryOperation("*", {$1 * $0}))
         learnOp(Op.BinaryOperation("+", {$0 + $1}))
         learnOp(Op.BinaryOperation("-") {$1 - $0})
