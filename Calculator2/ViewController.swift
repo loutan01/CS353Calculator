@@ -44,15 +44,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func backspace(sender: UIButton) {
-        if display.text!.characters.count > 1 {
-        
-           // display.text! = display.text!.substringToIndex(countElements(display.text!) - 1)
-        }else{
-            display.text = "0"
+        if userInputing {
+            if display.text?.characters.count == 0 {
+                displayValue = 0
+            }else{
+                display.text = String((display.text!).characters.dropLast())
+            }
         }
         updateHistory()
-
     }
+    
     @IBAction func setMemory(sender: UIButton) {
         if displayValue != nil {
             userInputing = false
