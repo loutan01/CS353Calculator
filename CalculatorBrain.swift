@@ -152,7 +152,7 @@ class CalculatorBrain
             var description: String? = nil
             var remainingOps = opStack
             while (!remainingOps.isEmpty) {
-                let (result, remainder) = evaluateDescription(remainingOps)
+                let (result, remainder) = getDescription(remainingOps)
                 if (result != nil) {
                     description = description != nil ? "\(result!), \(description!)" : "\(result!)"
                 }
@@ -168,7 +168,7 @@ class CalculatorBrain
         }
     }
     
-    private func evaluateDescription(ops: [Op]) -> (result: String?, remainingOps: [Op]) {
+    private func getDescription(ops: [Op]) -> (result: String?, remainingOps: [Op]) {
         if !ops.isEmpty {
             var descriptionPart = ""
             var remainingOps = ops;
@@ -184,18 +184,18 @@ class CalculatorBrain
                 descriptionPart = "\(symbol)"
            
             case .UnaryOperation(let symbol, _):
-                let evaluated = remainingOps.isEmpty ? (result: "?", remainingOps: remainingOps) : evaluateDescription(remainingOps)
+                let evaluated = remainingOps.isEmpty ? (result: "?", remainingOps: remainingOps) : getDescription(remainingOps)
                 remainingOps = evaluated.remainingOps
                 descriptionPart = "\(symbol)(\(evaluated.result!))"
            
             case .BinaryOperation(let symbol, _):
-                let evaluated1 = remainingOps.isEmpty ? (result: "?", remainingOps: remainingOps) : evaluateDescription(remainingOps)
+                let evaluated1 = remainingOps.isEmpty ? (result: "?", remainingOps: remainingOps) : getDescription(remainingOps)
                 remainingOps = evaluated1.remainingOps
-                let evaluated2 = remainingOps.isEmpty ? (result: "?", remainingOps: remainingOps) : evaluateDescription(remainingOps)
+                let evaluated2 = remainingOps.isEmpty ? (result: "?", remainingOps: remainingOps) : getDescription(remainingOps)
                 remainingOps = evaluated2.remainingOps
                 var evaluated1Result = evaluated1.result!
                 
-                if (symbol == "×" || symbol == "÷") && (evaluated1Result.rangeOfString("+") != nil || evaluated1Result.rangeOfString("-") != nil) {
+                if (symbol == "*" || symbol == "÷") && (evaluated1Result.rangeOfString("+") != nil || evaluated1Result.rangeOfString("-") != nil) {
                     evaluated1Result = "(" + evaluated1Result + ")"
                 }
                 descriptionPart = "\(evaluated2.result!)\(symbol)\(evaluated1Result)"
